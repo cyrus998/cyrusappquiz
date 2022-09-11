@@ -9,9 +9,9 @@
           </div>
 
           <div class="modal-body">
-            <div style="color: black;" id="score">
+            <div style="color: black" id="score">
               You answered
-              <span style="color: black;" class="highlight">
+              <span style="color: black" class="highlight">
                 {{ score.correctlyAnsweredQuestions }} out of
                 {{ score.allQuestions }}
               </span>
@@ -54,7 +54,6 @@ export default {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   display: table;
-  transition: opacity 0.3s ease;
 }
 
 .modal-wrapper {
@@ -73,64 +72,26 @@ export default {
   transition: all 0.3s ease;
 }
 
-.modal-header {
-  text-align: center;
-}
-
 .modal-header h2 {
-  color:black;
+  color: black;
 }
 
 .modal-header h3 {
   color: black;
 }
-
-.modal-body {
-  display: flex;
-  flex-direction: column;
-  margin: 20px 0;
-  line-height: 3rem;
-}
-
-.modal-body > * {
-  margin: 1rem 0;
-  padding: 0.25rem 0.5rem;
-}
-
-.modal-footer {
-  text-align: center;
-}
-
 .button-footer {
-  appearance: button;
-  background-color: #000;
-  background-image: none;
-  border: 1px solid #000;
-  border-radius: 4px;
-  box-shadow: #fff 4px 4px 0 0, #000 4px 4px 0 1px;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
   display: inline-block;
-  font-family: ITCAvantGardeStd-Bk, Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 20px;
-  margin: 0 5px 10px 0;
-  overflow: visible;
-  padding: 12px 40px;
-  text-align: center;
-  text-transform: none;
-  touch-action: manipulation;
-  user-select: none;
-  -webkit-user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
+  margin: 0.5rem;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  background: #000000;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 14px 24px 16px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 200ms, background 200ms;
 }
-
-.button-footer:hover {
-  transform: scale(1.02);
-}
-
-
 </style>

@@ -52,7 +52,7 @@
       <router-view></router-view>
     </v-main>
 
-    <v-bottom-navigation :value="value" color="primary">
+    <v-bottom-navigation color="primary">
       <v-btn>
         <span>Dashboard</span>
 
@@ -64,7 +64,7 @@
       <v-btn>
         <span>About Me.</span>
 
-        <router-link role="button" to="/">
+        <router-link role="button" to="/about">
           <v-icon>mdi-book-account</v-icon>
         </router-link>
       </v-btn>
@@ -72,7 +72,7 @@
       <v-btn>
         <span>About Vuetify</span>
 
-        <router-link role="button" to="/">
+        <router-link role="button" to="/aboutvuetify">
           <v-icon>mdi-vuejs</v-icon>
         </router-link>
       </v-btn>
@@ -80,7 +80,7 @@
       <v-btn>
         <span>Calculator</span>
 
-        <router-link role="button" to="/">
+        <router-link role="button" to="/calculator">
           <v-icon>mdi-calculator-variant</v-icon>
         </router-link>
       </v-btn>
@@ -88,7 +88,7 @@
       <v-btn>
         <span>String Manipulation</span>
 
-        <router-link role="button" to="/">
+        <router-link role="button" to="/string">
           <v-icon>mdi-form-textbox</v-icon>
         </router-link>
       </v-btn>
@@ -96,7 +96,7 @@
       <v-btn>
         <span>Quiz App</span>
 
-        <router-link role="button" to="/">
+        <router-link role="button" to="/quizapp">
           <v-icon>mdi-pencil-box-multiple-outline</v-icon>
         </router-link>
       </v-btn>
@@ -118,7 +118,11 @@ export default {
         icon: "mdi-vuejs",
         to: "/aboutvuetify",
       },
-      { title: "Calculator", icon: "mdi-calculator-variant", to: "/calculator" },
+      {
+        title: "Calculator",
+        icon: "mdi-calculator-variant",
+        to: "/calculator",
+      },
       { title: "StringManipulation", icon: "mdi-form-textbox", to: "/string" },
       {
         title: "Quiz App",

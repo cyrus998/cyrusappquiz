@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="correctAnswers" style="font-size: 2rem;">
+    <div class="correctAnswers" style="font-size: 2rem">
       You have
       <strong>{{ correctAnswers }} correct {{ pluralizeAnswer }}!</strong>
     </div>
@@ -8,7 +8,10 @@
       Now answering question {{ index + 1 }} of {{ questions.length }}
     </div>
 
-    <h1 style="font-size: 3rem;" v-html="loading ? 'Generating Questions...' : currentQuestion.question"></h1>
+    <h1
+      style="font-size: 3rem"
+      v-html="loading ? 'Generating Questions...' : currentQuestion.question"
+    ></h1>
     <!-- Only first question is displayed -->
     <form v-if="currentQuestion">
       <button
@@ -54,15 +57,14 @@ export default {
       }
     },
     pluralizeAnswer() {
-      // For grammatical correctness
       return this.correctAnswers === 1 ? "Answer" : "Answers";
     },
     quizCompleted() {
       if (this.questions.length === 0) {
         return false;
       }
-      /* Check if all questions have been answered */
-      let questionsAnswered = 0;
+
+      let questionsAnswered = 0; // check if finished quiz
       this.questions.forEach(function (question) {
         question.rightAnswer !== null ? questionsAnswered++ : null;
       });
@@ -74,7 +76,7 @@ export default {
           allQuestions: this.questions.length,
           answeredQuestions: this.questions.reduce((count, currentQuestion) => {
             if (currentQuestion.userAnswer) {
-              // userAnswer is set when user has answered a question, no matter if right or wrong
+              // get user answer
               count++;
             }
             return count;
@@ -82,7 +84,7 @@ export default {
           correctlyAnsweredQuestions: this.questions.reduce(
             (count, currentQuestion) => {
               if (currentQuestion.rightAnswer) {
-                // rightAnswer is true, if user answered correctly
+                // if user is right
                 count++;
               }
               return count;
@@ -110,18 +112,18 @@ export default {
   methods: {
     async fetchQuestions() {
       this.loading = true;
-      //fetching questions from api
+      // get questions from opentdb
       let response = await fetch(
         "https://opentdb.com/api.php?amount=3&category=18"
       );
-      let index = 0; //To identify single answer
+      let index = 0;
       let data = await response.json();
       let questions = data.results.map((question) => {
         question.answers = [
           question.correct_answer,
           ...question.incorrect_answers,
         ];
-        //shuffle above array
+        //shuffle array
         for (let i = question.answers.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
           [question.answers[i], question.answers[j]] = [
@@ -209,33 +211,20 @@ form {
   justify-content: center;
 }
 button {
- 
-  appearance: button;
-  background-color: #000;
-  background-image: none;
-  border: 1px solid #000;
-  border-radius: 4px;
-  box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
   display: inline-block;
-  font-family: ITCAvantGardeStd-Bk,Arial,sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 20px;
-  margin: 0 5px 10px 0;
-  overflow: visible;
-  padding: 12px 40px;
-  text-align: center;
-  text-transform: none;
-  touch-action: manipulation;
-  user-select: none;
-  -webkit-user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
+  outline: 0;
+  border: 0;
+  margin: 0.5rem;
+  cursor: pointer;
+  background: #000000;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 14px 24px 16px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 200ms, background 200ms;
 }
-
 
 button.clicked {
   pointer-events: none;
@@ -257,7 +246,7 @@ button.rightAnswer {
 
 button.wrongAnswer {
   color: black;
-  background:red;
+  background: red;
 }
 
 button.showRightAnswer {
