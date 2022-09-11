@@ -1,8 +1,8 @@
 <template>
   <span class="bg"></span>
   <v-app id="inspire">
-    <v-app-bar color="#007bff" prominent>
-      <v-app-bar-nav-icon
+    <v-app-bar color="#0b182b" prominent>
+      <v-app-bar-nav-icon style="color:white;"
         variant="text"
         @click.stop="drawer = !drawer"
       ></v-app-bar-nav-icon>
@@ -101,7 +101,7 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  background: url("https://cdn.pixabay.com/photo/2016/03/26/13/09/organic-1280537_1280.jpg")
+  background: url("https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1817&q=80")
     no-repeat center center;
   background-size: cover;
   background-color: red;
