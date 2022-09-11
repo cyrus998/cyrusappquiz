@@ -9,9 +9,9 @@
           </div>
 
           <div class="modal-body">
-            <div id="score">
+            <div style="color: black;" id="score">
               You answered
-              <span class="highlight">
+              <span style="color: black;" class="highlight">
                 {{ score.correctlyAnsweredQuestions }} out of
                 {{ score.allQuestions }}
               </span>
@@ -78,11 +78,11 @@ export default {
 }
 
 .modal-header h2 {
-  color: rgb(0, 178, 72);
+  color:black;
 }
 
 .modal-header h3 {
-  color: rgb(0, 178, 72);
+  color: black;
 }
 
 .modal-body {
@@ -132,9 +132,5 @@ export default {
   transform: scale(1.02);
 }
 
-#score {
-  background-color: rgb(210, 200, 200);
-  border-radius: 5px;
-}
 
 </style>

@@ -2,7 +2,8 @@
   <span class="bg"></span>
   <v-app id="inspire">
     <v-app-bar color="#0b182b" prominent>
-      <v-app-bar-nav-icon style="color:white;"
+      <v-app-bar-nav-icon
+        style="color: white"
         variant="text"
         @click.stop="drawer = !drawer"
       ></v-app-bar-nav-icon>
@@ -11,11 +12,15 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn variant="text" icon="mdi-magnify"></v-btn>
+      <v-btn style="color: white" variant="text" icon="mdi-magnify"></v-btn>
 
-      <v-btn variant="text" icon="mdi-filter"></v-btn>
+      <v-btn style="color: white" variant="text" icon="mdi-filter"></v-btn>
 
-      <v-btn variant="text" icon="mdi-dots-vertical"></v-btn>
+      <v-btn
+        style="color: white"
+        variant="text"
+        icon="mdi-dots-vertical"
+      ></v-btn>
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" app>
@@ -49,26 +54,50 @@
 
     <v-bottom-navigation :value="value" color="primary">
       <v-btn>
-        <span>Recents</span>
+        <span>Dashboard</span>
 
         <router-link role="button" to="/">
-          <v-icon>mdi-history</v-icon>
+          <v-icon>mdi-monitor-dashboard</v-icon>
         </router-link>
       </v-btn>
 
       <v-btn>
-        <span>Favorites</span>
+        <span>About Me.</span>
 
-        <router-link role="button" to="/quizapp">
-          <v-icon>mdi-heart</v-icon>
+        <router-link role="button" to="/">
+          <v-icon>mdi-book-account</v-icon>
         </router-link>
       </v-btn>
 
       <v-btn>
-        <span>Nearby</span>
+        <span>About Vuetify</span>
 
-        <router-link role="button" to="/about">
-          <v-icon>mdi-map-marker</v-icon>
+        <router-link role="button" to="/">
+          <v-icon>mdi-vuejs</v-icon>
+        </router-link>
+      </v-btn>
+
+      <v-btn>
+        <span>Calculator</span>
+
+        <router-link role="button" to="/">
+          <v-icon>mdi-calculator-variant</v-icon>
+        </router-link>
+      </v-btn>
+
+      <v-btn>
+        <span>String Manipulation</span>
+
+        <router-link role="button" to="/">
+          <v-icon>mdi-form-textbox</v-icon>
+        </router-link>
+      </v-btn>
+
+      <v-btn>
+        <span>Quiz App</span>
+
+        <router-link role="button" to="/">
+          <v-icon>mdi-pencil-box-multiple-outline</v-icon>
         </router-link>
       </v-btn>
     </v-bottom-navigation>
@@ -83,7 +112,14 @@ export default {
 
     items: [
       { title: "Dashboard", icon: "mdi-monitor-dashboard", to: "/" },
-      { title: "About", icon: "mdi-book-account", to: "/about" },
+      { title: "About Me.", icon: "mdi-book-account", to: "/about" },
+      {
+        title: "About Vuetify.",
+        icon: "mdi-vuejs",
+        to: "/aboutvuetify",
+      },
+      { title: "Calculator", icon: "mdi-calculator-variant", to: "/calculator" },
+      { title: "StringManipulation", icon: "mdi-form-textbox", to: "/string" },
       {
         title: "Quiz App",
         icon: "mdi-pencil-box-multiple-outline",

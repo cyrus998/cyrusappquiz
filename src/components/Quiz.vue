@@ -8,7 +8,7 @@
       Now answering question {{ index + 1 }} of {{ questions.length }}
     </div>
 
-    <h1 style="font-size: 3rem;" v-html="loading ? 'Loading...' : currentQuestion.question"></h1>
+    <h1 style="font-size: 3rem;" v-html="loading ? 'Generating Questions...' : currentQuestion.question"></h1>
     <!-- Only first question is displayed -->
     <form v-if="currentQuestion">
       <button
@@ -112,7 +112,7 @@ export default {
       this.loading = true;
       //fetching questions from api
       let response = await fetch(
-        "https://opentdb.com/api.php?amount=5&category=20"
+        "https://opentdb.com/api.php?amount=3&category=18"
       );
       let index = 0; //To identify single answer
       let data = await response.json();

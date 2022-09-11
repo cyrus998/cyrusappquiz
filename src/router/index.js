@@ -15,6 +15,21 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     },
     {
+      path: '/string',
+      name: 'string',
+      component: () => import('../views/StringManipulation.vue')
+    },
+    {
+      path: '/calculator',
+      name: 'calculator',
+      component: () => import('../views/Calculator.vue')
+    },
+    {
+      path: '/aboutvuetify',
+      name: 'aboutvuetify',
+      component: () => import('../views/AboutVuetify.vue')
+    },
+    {
       path: '/quizapp',
       name: 'quizapp',
       component: () => import('../views/QuizApp.vue')
