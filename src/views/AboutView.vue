@@ -58,7 +58,8 @@
     </div>
 
     <v-card-actions>
-      <v-btn color="deep-purple-lighten-2"> Hire Me! </v-btn>
+      <router-link to="spotify"><v-btn color="deep-purple-lighten-2"> Click Me! </v-btn></router-link>
+      
     </v-card-actions>
   </v-card>
 </template>

@@ -4,7 +4,7 @@
     <v-col cols="12" sm="4" style="margin-top: 1rem;">
       <v-card  max-width="350">
         <router-link to="/about">
-          <img :src="vuetifylink" height="200" cover class="white--text align-end" />
+          <img :src="image" height="200" cover class="white--text align-end" />
         </router-link>
         <v-card-title>About Me.</v-card-title>
         <v-card-text class="text--primary">
@@ -29,7 +29,7 @@
     <v-col cols="12" sm="4" style="margin-top: 1rem;">
       <v-card  max-width="350">
         <router-link to="/calculator">
-          <img :src="vuetifylink" height="200" cover class="white--text align-end" />
+          <img :src="calculatorlink" height="200" cover class="white--text align-end" />
         </router-link>
         <v-card-title>Simple Calculator.</v-card-title>
         <v-card-text class="text--primary">
@@ -41,7 +41,7 @@
     <v-col cols="12" sm="4" style="margin-top: 1rem;">
       <v-card  max-width="350">
         <router-link to="/string">
-          <img :src="vuetifylink" height="200" cover class="white--text align-end" />
+          <img :src="stringlink" height="200" cover class="white--text align-end" />
         </router-link>
         <v-card-title>String Manipulation.</v-card-title>
         <v-card-text class="text--primary">
@@ -53,7 +53,7 @@
     <v-col cols="12" sm="4" style="margin-top: 1rem;">
       <v-card  max-width="350">
         <router-link to="/quizapp">
-          <img :src="vuetifylink" height="200" cover class="white--text align-end" />
+          <img :src="quizlink" height="200" cover class="white--text align-end" />
         </router-link>
         <v-card-title>Quiz App.</v-card-title>
         <v-card-text class="text--primary">
@@ -77,11 +77,14 @@
 <script>
 import image from "../assets/aboutmelink.png";
 import vuetifylink from "../assets/vuetifylink.png";
+import calculatorlink from "../assets/calculatorlink.png";
+import stringlink from "../assets/stringlink.png";
+import quizlink from "../assets/quizlink.png";
 
 export default {
   data: function () {
     return {
-      image: image, vuetifylink
+      image: image, vuetifylink, calculatorlink, stringlink, quizlink
     };
   },
 };

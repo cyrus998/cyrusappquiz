@@ -114,7 +114,7 @@ export default {
       this.loading = true;
       // get questions from opentdb
       let response = await fetch(
-        "https://opentdb.com/api.php?amount=3&category=18"
+        "https://opentdb.com/api.php?amount=10&category=18"
       );
       let index = 0;
       let data = await response.json();

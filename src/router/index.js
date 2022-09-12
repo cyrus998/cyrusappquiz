@@ -41,6 +41,13 @@ const router = createRouter({
           window.location.replace("https://vuetifyjs.com/en/introduction/why-vuetify/")
       }
     },
+    {
+      path: '/spotify',
+        name: 'spotify',
+        beforeEnter(to, from, next) {
+          window.location.replace("https://open.spotify.com/user/31tfv6hv3mr755lhf25i3bcmforu?si=8066a9f7daab4de9")
+      }
+    },
   ]
 })
 
