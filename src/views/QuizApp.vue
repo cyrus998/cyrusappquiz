@@ -1,5 +1,6 @@
 <template>
   <div id="app" style="margin-top: 5rem">
+    <div style="text-align: center;">
     <h1>Quiz App</h1>
     <quiz @quiz-completed="handleQuizCompleted" :key="quizKey" />
     <custom-modal
@@ -10,6 +11,8 @@
       @reload="updateQuiz"
       @close="showModal = false"
     />
+
+  </div>
   </div>
 </template>
 
@@ -50,7 +53,6 @@ export default {
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  text-align: center;
   color: white;
 }
 </style>
