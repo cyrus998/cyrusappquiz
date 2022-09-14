@@ -69,7 +69,7 @@ const register = () => {
     .then((data) => {
       console.log("Successfully registered!");
       console.log(auth.currentUser);
-      router.push("/calculator");
+      router.push("/");
     })
     .catch((error) => {
       console.log(error.code);
@@ -82,7 +82,7 @@ const signInWithGoogle = () => {
   signInWithPopup(getAuth(), provider)
     .then((result) => {
       console.log(result.user);
-      router.push("/calculator");
+      router.push("/");
     })
     .catch((error) => {});
 };
