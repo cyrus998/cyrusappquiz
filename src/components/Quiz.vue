@@ -106,7 +106,7 @@ export default {
       completed &&
         setTimeout(() => {
           this.$emit("quiz-completed", this.score);
-        }, 500);
+        }, 1000);
     },
   },
   methods: {
@@ -168,7 +168,7 @@ export default {
             function () {
               this.index += 1;
             }.bind(this),
-            500
+            2000
           );
         }
         if (question.userAnswer === question.correct_answer) {

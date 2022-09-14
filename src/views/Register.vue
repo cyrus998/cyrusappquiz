@@ -8,7 +8,7 @@
 
     <v-card-item>
       <v-card-title style="font-size: 2rem; color: white; margin-bottom: 1.5rem"
-        >Register an Account</v-card-title
+        >Register an Account.</v-card-title
       >
 
       <v-card-subtitle>
