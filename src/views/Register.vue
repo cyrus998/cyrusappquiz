@@ -13,6 +13,7 @@
 
       <v-card-subtitle>
         <span class="mr-1" style="color: white">Enter your details below:</span>
+        <p v-if="errMsg" style="color:red">{{errMsg}}</p>
       </v-card-subtitle>
 
       <router-link style="color:white;" to="/signin">Already have an account?</router-link>

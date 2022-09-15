@@ -100,7 +100,7 @@ router.beforeEach(async(to, from, next) => {
     if (await getCurrentUser()){
       next();
     }else {
-      alert("Access Denied. User must be logged in first!");
+      alert("User must be logged in first!");
       next("/signin");
     }
   }else{

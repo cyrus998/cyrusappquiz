@@ -14,7 +14,7 @@
 
       <v-btn style="color: white" variant="text" icon="mdi-magnify"></v-btn>
 
-      <v-btn @click="handleSignOut" v-if="isLoggedIn" color="primary" dark
+      <v-btn @click="handleSignOut" v-if="isLoggedIn" color="white" dark
         ><v-icon class="mr-3" left>
           mdi-account-multiple-remove-outline
         </v-icon>
@@ -116,7 +116,7 @@
 import { onMounted, ref } from "vue";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { useRouter } from "vue-router";
-
+import router from "./router";
 const isLoggedIn = ref(false);
 
 let auth;
@@ -133,7 +133,7 @@ onMounted(() => {
 
 const handleSignOut = () => {
   signOut(auth).then(() => {
-    window.location = "/register";
+    router.push("/signin");
     alert("User logged out.");
   });
 };
