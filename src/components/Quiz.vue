@@ -26,12 +26,18 @@
 </template>
 
 <script>
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
+import { getFirestore, collection, setDoc, doc } from "firebase/firestore";
+
 export default {
   data() {
     return {
       questions: [],
       loading: true,
       index: 0,
+      score: 0,
+      currentNumberQuestion: 1,
+      auth: getAuth(),
     };
   },
   computed: {
@@ -176,7 +182,23 @@ export default {
           e.target.classList.add("rightAnswer");
           /* Set rightAnswer on question to true, computed property can track a streak out of 20 questions */
           this.questions[index].rightAnswer = true;
+
+          //FIRESTORE
+          this.score++;
+
+          setDoc(
+            doc(getFirestore(), "users", this.auth.currentUser.email),
+            { score: this.score },
+            { merge: true }
+          );
+
+
         } else {
+          setDoc(
+            doc(getFirestore(), "users", this.auth.currentUser.email),
+            { score: this.score },
+            { merge: true }
+          );
           /* Mark users answer as wrong answer */
           e.target.classList.add("wrongAnswer");
           this.questions[index].rightAnswer = false;

@@ -12,8 +12,8 @@
             <div style="color: black" id="score">
               You answered
               <span style="color: black" class="highlight">
-                {{ score.correctlyAnsweredQuestions }} out of
-                {{ score.allQuestions }}
+                {{ this.score }} out of
+                {{ 10 }}
               </span>
               questions.
             </div>
@@ -27,6 +27,15 @@
             >
               Play Again
             </button>
+
+            <button
+              id="play-again"
+              class="button-footer"
+              @click="$emit('close')"
+            >
+              Exit
+            </button>
+
           </div>
         </div>
       </div>
