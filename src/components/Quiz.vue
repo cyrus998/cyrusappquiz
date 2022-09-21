@@ -188,7 +188,7 @@ export default {
 
           setDoc(
             doc(getFirestore(), "users", this.auth.currentUser.email),
-            { score: this.score },
+            { score: this.score, CurrentTimeQuizisTaken: new Date() },
             { merge: true }
           );
 
